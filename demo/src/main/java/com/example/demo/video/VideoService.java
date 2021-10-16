@@ -1,5 +1,6 @@
 package com.example.demo.video;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,9 +12,15 @@ import java.util.List;
 public class VideoService
 {
 
+private  final VideoRepository videoRepository;
+
+    @Autowired
+    public VideoService(VideoRepository videoRepository) {
+        this.videoRepository = videoRepository;
+    }
 
     @GetMapping
     public List<Video> getVideos(){
-        return List.of(new Video(1L,"Prank", LocalDate.of(2000, Month.DECEMBER,26),5));
+       return videoRepository.findAll();
     }
 }
