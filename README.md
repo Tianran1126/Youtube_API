@@ -2,7 +2,7 @@
 
 Run command:
 
-1,use maven to install it in intellji
+1,mvn install 
 
 2,cd target 
 
