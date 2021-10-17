@@ -32,6 +32,12 @@ public class VideoController {
         videoService.deleteVideo(videoId);
     }
 
+    @PutMapping(path="{videoID}")
+    public void updateStudent(@PathVariable("videoID") Long videoID,@RequestParam(required = false) String name,@RequestParam(required = false) Integer like){
+        videoService.updateVideo(videoID,like,name);
+    }
+
+
 
 
 
