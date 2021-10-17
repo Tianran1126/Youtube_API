@@ -33,4 +33,14 @@ private  final VideoRepository videoRepository;
         }
         videoRepository.save(video);
     }
+
+    public void deleteVideo(Long videoID){
+        boolean exist=videoRepository.existsById(videoID);
+        if(!exist){
+            throw new IllegalStateException("video with ID "+videoID+" does not exist");
+        }
+        videoRepository.deleteById(videoID);
+    }
+
+
 }

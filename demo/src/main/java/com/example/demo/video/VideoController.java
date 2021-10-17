@@ -21,10 +21,18 @@ public class VideoController {
     public List<Video> getVideos(){
         return videoService.getVideos();
     }
+
     @PostMapping
     public void registernewVideo(@RequestBody Video video){
         videoService.addVideo(video);
     }
+
+    @DeleteMapping(path="{videoID}")
+    public void deleteStudent(@PathVariable("videoID") Long videoId){
+        videoService.deleteVideo(videoId);
+    }
+
+
 
 
 
