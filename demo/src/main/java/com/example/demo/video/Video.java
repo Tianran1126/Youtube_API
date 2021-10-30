@@ -16,6 +16,14 @@ public class Video {
     public Video() {
     }
 
+    /**
+     *
+     * @param id ID of the video
+     * @param name name of the video
+     * @param dob release day of the video
+     * @param like likes of the video
+     */
+
     public Video(Long id, String name, LocalDate dob, Integer like) {
         this.id = id;
         this.name = name;
@@ -23,6 +31,12 @@ public class Video {
         this.like = like;
     }
 
+    /**
+     *
+     * @param name name of the video
+     * @param dob  release day of the video
+     * @param like likes of the video
+     */
     public Video(String name, LocalDate dob, Integer like) {
         this.name = name;
         this.dob = dob;
